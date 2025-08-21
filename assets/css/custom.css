@@ -1,0 +1,222 @@
+/* Custom CSS để điều chỉnh hiển thị hình ảnh */
+
+/* Bộ chọn ngôn ngữ */
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 15px;
+}
+
+.language-selector a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.language-selector a.active {
+    color: #1ae6c8;
+}
+
+.language-selector a:not(.active)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #1ae6c8;
+    transition: width 0.3s ease;
+}
+
+.language-selector a:hover:not(.active)::after {
+    width: 100%;
+}
+
+/* Định dạng cho logo website */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.site-logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    background-color: #1ae6c8;  /* Màu xanh ngọc phù hợp với logo */
+    padding: 5px;
+}
+
+.site-logo:hover {
+    transform: scale(1.05);
+}
+
+.footer-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #1ae6c8;  /* Màu xanh ngọc phù hợp với logo */
+    padding: 5px;
+}
+
+@media screen and (max-width: 736px) {
+    .site-logo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .footer-logo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Điều chỉnh layout gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;  /* Tạo khoảng cách giữa các hình ảnh */
+    margin: 0;
+    width: 100%;
+}
+
+/* Điều chỉnh hiển thị hình ảnh trong gallery */
+.gallery a {
+    border-bottom: 0;
+    display: block;
+    margin: 0;
+    outline: 0;
+    position: relative;
+    width: calc(50% - 10px);  /* 2 hình ảnh trên mỗi hàng với khoảng cách */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gallery a img {
+    height: 280px !important;  /* Chiều cao cố định cho tất cả hình ảnh */
+    object-fit: cover !important;  /* Đảm bảo hình ảnh lấp đầy không gian */
+    object-position: center !important;  /* Căn giữa hình ảnh */
+    width: 100% !important;
+    transition: transform 0.5s ease;  /* Hiệu ứng hover mượt mà */
+    border-radius: 8px;
+}
+
+/* Điều chỉnh cho hình ảnh landscape */
+.gallery a.landscape {
+    width: 100%;  /* Chiếm toàn bộ chiều rộng */
+}
+
+.gallery a.landscape img {
+    height: 350px !important;  /* Chiều cao lớn hơn cho hình ảnh landscape */
+    object-position: center 30% !important; /* Điều chỉnh vị trí để hiển thị tốt hơn */
+}
+
+/* Điều chỉnh cho hình ảnh portrait */
+.gallery a.portrait img {
+    height: 380px !important;  /* Chiều cao lớn hơn cho hình ảnh portrait */
+    object-position: center 25% !important; /* Điều chỉnh vị trí để hiển thị tốt hơn */
+}
+
+/* Điều chỉnh đặc biệt cho các hình ảnh kết hôn và gia đình */
+[src*="ket hon"], [src*="gia dinh"], [src*="Gia dinh"] {
+    object-position: center center !important; /* Đảm bảo trọng tâm hình ảnh ở giữa */
+}
+
+/* Hiệu ứng zoom khi hover */
+.gallery a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gallery a:hover img {
+    transform: scale(1.05);  /* Phóng to hình ảnh khi hover */
+}
+
+/* Điều chỉnh hiển thị hình ảnh chính ở trang đầu */
+.image.fill img {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Điều chỉnh hiển thị hình ảnh main */
+.image.main img {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 400px !important;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Thêm màu xanh ngọc cho các yếu tố khác */
+.button.primary {
+    background-color: #1ae6c8 !important;
+    box-shadow: none !important;
+}
+
+.button.primary:hover {
+    background-color: #15c5ab !important;
+}
+
+a {
+    color: #1ae6c8;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+h1 strong, h2 strong, h3 strong, 
+p strong {
+    color: #1ae6c8;
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+    border-color: #1ae6c8 !important;
+}
+
+/* Điều chỉnh responsive */
+@media screen and (max-width: 736px) {
+    .gallery a {
+        width: 100%;  /* Trên mobile, mỗi hình ảnh chiếm 100% chiều rộng */
+    }
+    
+    .gallery a img,
+    .gallery a.landscape img,
+    .gallery a.portrait img {
+        height: 250px !important;  /* Chiều cao đồng nhất trên mobile */
+    }
+    
+    .image.main img {
+        height: 300px !important;
+    }
+    
+    .language-selector {
+        top: 10px;
+        right: 10px;
+        padding: 3px 10px;
+    }
+}
