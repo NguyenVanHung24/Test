@@ -90,6 +90,14 @@
     }
 }
 
+/* Tạo hiệu ứng nổi bật cho thẻ strong */
+strong {
+    color: #1ae6c8; /* Sử dụng màu xanh ngọc giống màu nền của logo */
+    font-weight: 700; /* Tăng độ đậm của font */
+    text-shadow: 0 0 1px rgba(26, 230, 200, 0.2); /* Thêm hiệu ứng bóng mờ */
+    padding: 0 3px; /* Thêm khoảng cách hai bên */
+}
+
 /* Điều chỉnh layout gallery */
 .gallery {
     display: flex;
